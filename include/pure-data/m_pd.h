@@ -32,7 +32,8 @@ extern "C" {
 #ifdef PD_INTERNAL
 #define EXTERN __declspec(dllexport) extern
 #else
-#define EXTERN __declspec(dllimport) extern
+#define EXTERN extern
+//#define EXTERN __declspec(dllimport) extern
 #endif /* PD_INTERNAL */
 #else
 #define EXTERN extern
