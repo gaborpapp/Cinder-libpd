@@ -1,0 +1,12 @@
+env = Environment()
+
+env['APP_TARGET'] = 'pdTestApp'
+env['APP_SOURCES'] = ['pdTestApp.cpp']
+env['ASSETS'] = ['*.pd']
+env['DEBUG'] = 1
+
+# Cinder-libpd
+env = SConscript('../../../scons/SConscript', exports = 'env')
+
+SConscript('../../../../../scons/SConscript', exports = 'env')
+

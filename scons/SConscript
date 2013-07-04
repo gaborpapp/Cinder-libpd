@@ -1,0 +1,23 @@
+Import('env')
+
+_INCLUDES = ['../include', '../include/libpd_wrapper', '../include/libpd_wrapper/util',
+		'../include/pure-data', '../src']
+_INCLUDES = [Dir(i).abspath for i in _INCLUDES]
+
+_SOURCES = ['PdBase.cpp', 'PdTypes.cpp']
+_SOURCES = [File('../src/' + s).abspath for s in _SOURCES]
+
+_LIBS = ['libpd.a']
+if env['PLATFORM'] == 'darwin':
+	_LIBS = [File('../lib/macosx/' + s) for s in _LIBS]
+else:
+	_LIBS = []
+
+_CCFLAGS = ['-DPD', '-DUSEAPI_DUMMY', '-DHAVE_LIBDL', '-DHAVE_UNISTD_H']
+
+env.Append(APP_SOURCES = _SOURCES)
+env.Append(CCFLAGS = _CCFLAGS)
+env.Append(CPPPATH = _INCLUDES)
+env.Append(LIBS = _LIBS)
+
+Return('env')

@@ -1,0 +1,6 @@
+# scons
+.sconsign.dblite
+*.o
+
+# vim
+*.sw[a-z]
