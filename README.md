@@ -33,3 +33,8 @@ index ad07480..1a9b17d 100644
  
 </pre>
 
+#### libpd static lib build
+
+Use the following patched [libpd](https://github.com/bgbotond/libpd) with
+Visual Studio to recompile libpd.lib.
+
