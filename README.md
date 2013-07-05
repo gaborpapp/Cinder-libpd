@@ -1,7 +1,7 @@
 Cinder-libpd
 ------------
 
-#### libpd static lib build instructions
+#### libpd static lib build instructions on OS X
 
 Use the following patch to build a static library and copy libpd/libs/libpd.a
 to the Cinder-libpd/lib/macosx/ folder.
