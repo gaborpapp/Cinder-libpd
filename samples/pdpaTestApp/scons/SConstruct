@@ -1,0 +1,14 @@
+env = Environment()
+
+env['APP_TARGET'] = 'pdpaTestApp'
+env['APP_SOURCES'] = ['pdpaTestApp.cpp']
+env['ASSETS'] = ['*.pd']
+env['DEBUG'] = 1
+
+# libpd
+env = SConscript('../../../scons/SConscript', exports = 'env')
+# portaudio
+env = SConscript('../../../../Cinder-portaudio/scons/Sconscript', exports = 'env')
+
+SConscript('../../../../../scons/SConscript', exports = 'env')
+
